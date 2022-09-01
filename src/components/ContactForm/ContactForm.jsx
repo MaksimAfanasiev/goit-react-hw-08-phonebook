@@ -6,7 +6,7 @@ import css from "./ContactForm.module.css";
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
 
   const contacts = useSelector(state => state.contacts.items);
   const dispatch = useDispatch();
@@ -19,8 +19,8 @@ export const ContactForm = () => {
         setName(value)
         break;
       
-      case 'phone':
-        setPhone(value)
+      case 'number':
+        setNumber(value)
         break;
       
       default:
@@ -28,14 +28,14 @@ export const ContactForm = () => {
     }
   }
 
-  function addContactItem(name, phone) {
+  function addContactItem(name, number) {
     if (contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase())) {
       alert(`${name} is already in contacts`)
       return
     } else {
       dispatch(addContact({
           name,
-          phone,
+          number,
       }));
     }
   }
@@ -43,10 +43,10 @@ export const ContactForm = () => {
   function onFormSubmit(e){
     e.preventDefault();
     
-    addContactItem(name, phone);
+    addContactItem(name, number);
 
     setName('');
-    setPhone('');
+    setNumber('');
   }
 
   return (
@@ -69,11 +69,11 @@ export const ContactForm = () => {
         Number
         <input className={css.formInput}
           type="tel"
-          name="phone"
+          name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
-          value={phone}
+          value={number}
           onChange={onInputChange}
         />
       </label>

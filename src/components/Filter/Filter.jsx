@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import {filterValue} from "../../reduxStore/actions"
+import { filterChange } from "reduxStore/contactSlice";
 import css from "./Filter.module.css";
 
 export const Filter = () => {
@@ -9,7 +9,7 @@ export const Filter = () => {
   return (
     <label className={css.filterLabel}>
       Find contacts by name
-      <input className={css.filterInput} type="text" name="filter" value={filter} onChange={(e) => {dispatch(filterValue(e.target.value))}} />
+      <input className={css.filterInput} type="text" name="filter" value={filter} onChange={(e) => {dispatch(filterChange(e.target.value))}} />
     </label>
   )
 }
