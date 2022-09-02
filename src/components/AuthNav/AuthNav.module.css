@@ -1,0 +1,9 @@
+.navList {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navList > li:not(:last-child) {
+    margin-right: 20px;
+}

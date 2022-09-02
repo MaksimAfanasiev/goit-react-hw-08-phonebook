@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {addContact} from "../../reduxStore/operations"
 import css from "./ContactForm.module.css";
+import Button from 'react-bootstrap/Button';
 
 
 export const ContactForm = () => {
@@ -78,7 +79,7 @@ export const ContactForm = () => {
         />
       </label>
 
-      <button className={css.formButton} type="submit">Add contact</button>
+      <Button className={css.formButton} variant="primary" type="submit">Add contact</Button>
 
     </form>)
 }

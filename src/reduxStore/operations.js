@@ -28,13 +28,21 @@ export const logOut = createAsyncThunk('auth/logout', async () => {
 export const getCurrentUser = createAsyncThunk(
   'auth/fetchCurrentUser',
   async (_, ThunkAPI) => {
-    const state = ThunkAPI.getState();
-    if (!state.auth.token) {
+    const currentState = ThunkAPI.getState();
+    const token = currentState.auth.token;
+
+    if (token === null) {
       return;
     }
-
-    const user = await getUser(state.auth.token);
+    const user = await getUser(currentState.auth.token);
     return user;
+
+    // try {
+    //   const user = await getUser(currentState.auth.token);
+    //   return user;
+    // } catch (error) {}
+    // const user = await getUser(currentState.auth.token);
+    // return user;
   }
 );
 

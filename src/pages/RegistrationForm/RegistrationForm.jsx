@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { register } from "../../reduxStore/operations";
+import css from "./RegistrationForm.module.css"
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 
 export const RegistrationForm = () => {
@@ -45,21 +48,21 @@ export const RegistrationForm = () => {
     return (
         <main>
             <h1>Registration</h1>
-            <form autoComplete="off" onSubmit={onFormSubmit}>
-                <label>
-                    Name
-                    <input type="text" name="name" value={name} onChange={onInputChange} />
-                </label>
-                <label>
-                    Email
-                    <input type="email" name="email" value={email} onChange={onInputChange} />
-                </label>
-                <label>
-                    Password
-                    <input type="password" name="password" value={password} onChange={onInputChange} />
-                </label>
-                <button type="submit">Submit</button>
-            </form>
+            <Form autoComplete="off" onSubmit={onFormSubmit} className={css.regForm}>
+                <Form.Group className="mb-3" controlId="formBasicName">
+                    <Form.Label>Name</Form.Label>
+                    <Form.Control type="text" name="name" value={name} onChange={onInputChange} required/>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control type="email" name="email" value={email} onChange={onInputChange} required/>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type="password" name="password" value={password} onChange={onInputChange} required/>
+                </Form.Group>
+                <Button variant="primary" type="submit">Submit</Button>
+            </Form>
         </main>
     )
 }

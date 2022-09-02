@@ -1,9 +1,12 @@
 .filterLabel {
     display: block;
-    padding: 10px 15px;
+    padding: 0 15px 10px 15px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .filterInput {
     display: block;
     margin-top: 5px;
+    margin: auto;
 }

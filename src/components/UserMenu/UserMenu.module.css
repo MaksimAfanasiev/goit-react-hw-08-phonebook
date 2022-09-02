@@ -1,0 +1,16 @@
+.welcomeWord {
+    font-size: large;
+    margin-bottom: 0;
+}
+
+.welcomeName {
+    font-size: large;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.logoutBtn {
+    padding: 5px;
+    height: 70%;
+}

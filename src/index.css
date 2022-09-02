@@ -17,9 +17,25 @@ code {
 
 h1,
 h2 {
-  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 ul {
   padding: 0;
+  list-style: none;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  align-items: center;
+  height: 50px
+};
+
+form {
+  display: block;
+  max-width: 70%;
 }

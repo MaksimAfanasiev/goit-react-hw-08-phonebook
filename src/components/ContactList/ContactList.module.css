@@ -1,5 +1,5 @@
 .contactList {
     display: block;
-    max-width: 450px;
-    padding-left: 20px;
+    max-width: 70%;
+    margin: auto;
 }
